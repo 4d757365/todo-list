@@ -1,3 +1,3 @@
 # Todo List
 
-Todo List using Javascript.
+Full stack Todo List app using AdonisJs and Vue.js.
