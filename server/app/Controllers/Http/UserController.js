@@ -9,6 +9,7 @@ class UserController {
         return token;        
     }
     async register({request}) {
+        console.log("hello new user");
         const { email, password } = request.all();
         console.log(email, password);
         await User.create({

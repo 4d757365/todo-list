@@ -1,0 +1,31 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@vue/eslint-config-airbnb": "^7.0.0",
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21",
+    "pinia": "^2.0.16",
+    "vue": "^2.7.7",
+    "vue-router": "^3.5.4",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.0.96",
+    "@nuxtjs/vuetify": "^1.12.3",
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "@vitejs/plugin-vue2-jsx": "^1.0.2",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "material-design-icons-iconfont": "^6.7.0",
+    "terser": "^5.14.2",
+    "vite": "^3.0.2"
+  }
+}
