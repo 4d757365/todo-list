@@ -1,9 +1,14 @@
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 export default {
     computed: {
         ...mapGetters('authentication', [
             'isLoggedIn',
+        ]),
+    },
+    methods: {
+        ...mapActions('authentication', [
+            'logout',
         ]),
     },
 };
@@ -33,7 +38,7 @@ export default {
                         Login
                     </v-btn>
 
-                    <v-btn class="mx-2" color="primary" v-if="isLoggedIn">
+                    <v-btn class="mx-2" color="primary" v-if="isLoggedIn" @click="logout">
                         <v-icon>mdi-logout</v-icon>
                         Logout
                     </v-btn>
