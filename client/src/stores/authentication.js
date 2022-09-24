@@ -3,11 +3,11 @@ import router from '../router'
 export default {
     namespaced: true,
     state: {
-        registerEmail: 'user',
-        registerPassword: 'password',
+        registerEmail: 'muse',
+        registerPassword: 'muse',
         registerError: null,
-        loginEmail: 'user',
-        loginPassword: 'password',
+        loginEmail: 'muse',
+        loginPassword: 'muse',
         loginError: null,
         token: null,
     },
