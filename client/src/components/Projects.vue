@@ -1,7 +1,7 @@
 <script>
-import { mapMutations, mapState, mapActions } from 'vuex';
-import Create from './Create.vue';
-import Edit from './Edit.vue';
+import { mapMutations, mapState, mapActions } from "vuex";
+import Create from "./Create.vue";
+import Edit from "./Edit.vue";
 export default {
     mounted() {
         this.fetchProjects();
@@ -13,11 +13,16 @@ export default {
         ])
     },
     methods: {
+        projectClicked(project) {
+            this.setCurrentProject(project);
+            this.fetchTasks(project);
+        },
         ...mapMutations("projects", [
             "setNewProjectName",
             "setEditMode",
             "unsetEditMode",
             "setProjectTitle",
+            "setCurrentProject"
         ]),
         ...mapActions("projects", [
             "createProject",
@@ -25,6 +30,9 @@ export default {
             "saveProject",
             "removeProject",
         ]),
+        ...mapActions("tasks", [
+            "fetchTasks",
+        ])
     },
     components: {
         Create,
@@ -35,12 +43,17 @@ export default {
 <template>
     <Panel title="Projects">
         <div v-for="project in projects" :key="project.id" class="project mt-2">
-            <Edit :isEditMode="project.isEditMode" :title="project.title"
-                @onInput="setProjectTitle({project, title: $event})" @onEdit="setEditMode(project)"
-                @onSave="saveProject(project)" @onRemove="removeProject(project)" />
+            <Edit :isEditMode="project.isEditMode" 
+                :title="project.title"
+                @onInput="setProjectTitle({project, title: $event})" 
+                @onEdit="setEditMode(project)"
+                @onSave="saveProject(project)" @onRemove="removeProject(project)"
+                @onClick="projectClicked(project)" />
         </div>
-        <Create placeholder="New project" @onInput="setNewProjectName" :value="newProjectName"
-            @create="createProject" />
+        <Create placeholder="New project" 
+                @onInput="setNewProjectName" 
+                :value="newProjectName"
+                @create="createProject" />
     </Panel>
 </template>
 
