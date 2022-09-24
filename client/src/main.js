@@ -3,7 +3,7 @@ import { sync } from 'vuex-router-sync'
 
 import Vue from 'vue'
 import Vuetify from 'vuetify'
-
+import Panel from './components/Panel.vue'
 import store from './stores/index'
 
 import App from './App.vue'
@@ -15,6 +15,8 @@ import './assets/main.css'
 
 Vue.use(Vuetify);
 sync(store, router);
+
+Vue.component('Panel', Panel)
 
 new Vue({
   router,

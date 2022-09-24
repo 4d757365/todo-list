@@ -30,20 +30,20 @@ export default {
                 commit('setRegisterError', 'An error has occured trying to register your account.');
             });
         },
-        login ({commit, state }) {
+        login({ commit, state }) {
             commit('setLoginError', null);
             return HTTP().post('/auth/login', {
-                email: state.loginEmail,
-                password: state.loginPassword,
+              email: state.loginEmail,
+              password: state.loginPassword,
             })
-            .then(({data}) => {
+              .then(({ data }) => {
                 commit('setToken', data.token);
                 router.push('/');
-            })
-            .catch(() => {
+              })
+              .catch(() => {
                 commit('setLoginError', 'An error has occured trying to login.');
-            });
-        },
+              });
+          },
     },
     getters: {
         isLoggedIn(state) {
