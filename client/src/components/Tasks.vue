@@ -15,13 +15,20 @@
                 'createTask',
                 'removeTask',
                 'saveTask',
+                
+                
 
             ]),
             ...mapMutations('tasks', [
                 'setNewTaskName',
                 'setTaskDescription',
                 'setEditMode',
-            ])
+                'toggleCompleted'
+            ]),
+            checkClicked(task) {
+                this.toggleCompleted(task);
+                this.saveTask(task);
+            }
         },
         components: {
             Create,
@@ -39,7 +46,13 @@
                 @onInput="setTaskDescription({task, description: $event})" 
                 @onEdit="setEditMode(task)"
                 @onSave="saveTask(task)" 
-                @onRemove="removeTask(task)" />
+                @onRemove="removeTask(task)" 
+                >
+                <v-icon @click="checkClicked(task)">
+                    {{task.completed ? 'mdi-checkbox-marked-outline' : 'mdi-checkbox-blank-outline'}}
+                </v-icon>
+
+                </Edit>
         </div>
 
         <Create placeholder="Tasks: " 
@@ -56,7 +69,7 @@
     font-size: 18px;
 }
 
-.icon {
+.mdi {
     cursor: pointer;
 }
 </style>

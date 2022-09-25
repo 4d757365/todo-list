@@ -60,7 +60,11 @@ export default {
     },
     deleteTask(state, task) {
       state.tasks.splice(state.tasks.indexOf(task), 1);
-    }
+    },
+    toggleCompleted(state, task)
+    { 
+      task.completed = !task.completed;
+    },
 
   },
 };

@@ -4,7 +4,7 @@ import Toolbar from '@/components/Toolbar.vue';
 export default {
   components: {
     Toolbar,
-  },
+  }
 };
 </script>
 

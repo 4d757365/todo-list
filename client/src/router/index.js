@@ -14,18 +14,29 @@ export default new VueRouter({
       path: '/',
       name: 'projects',
       component: Projects,
+      meta: {
+        title: 'Projects',
+      }
     },
     {
       path: '/register',
       name: 'register',
       component: Register,
+      meta: {
+        title: 'Register',
+      }
     },
     {
       path: '/login',
       name: 'login',
       component: Login,
+      meta: {
+        title: 'Login',
+      }
     }
-  ]
+  ],
 });
+
+
 
 

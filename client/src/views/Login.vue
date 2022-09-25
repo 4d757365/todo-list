@@ -17,6 +17,9 @@ export default {
         ...mapActions('authentication', [
             'login',
         ]),
+    },
+    created(){
+        document.title = "Login"
     }
 };
 </script>
@@ -27,7 +30,7 @@ export default {
                 <h1>Login</h1>
                 <v-text-field label="Email" placeholder="Email" :value="loginEmail" @input="setLoginEmail">
                 </v-text-field>
-                <v-text-field label="Password" placeholder="Password" type="password" autocomplete="new-password" :value="loginPassword" @input="setLoginPassword"> 
+                <v-text-field label="Password" placeholder="Password" type="password" autocomplete="new-password" :value="loginPassword" @input="setLoginPassword" @keyup.enter="login"> 
                 </v-text-field>
                 <v-alert color="primary" type="error" :value="loginError">{{loginError}}</v-alert>
                 <v-btn color="primary" @click="login">

@@ -1,6 +1,6 @@
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex';
-import { computed } from 'vue';
+
 export default {
     computed: {
         ...mapState('authentication', [
@@ -17,6 +17,9 @@ export default {
         ...mapActions('authentication', [
             'register',
         ]),
+    },
+    created(){
+        document.title = "Register"
     }
 };
 </script>
@@ -27,7 +30,7 @@ export default {
                 <h1>Register</h1>
                 <v-text-field label="Email" placeholder="Email" :value="registerEmail" @input="setRegisterEmail">
                 </v-text-field>
-                <v-text-field label="Password" placeholder="Password" type="password" autocomplete="new-password" :value="registerPassword" @input="setRegisterPassword"> 
+                <v-text-field label="Password" placeholder="Password" type="password" autocomplete="new-password" :value="registerPassword" @input="setRegisterPassword" @keyup.enter="register"> 
                 </v-text-field>
                 <v-alert color="primary" type="error" :value="registerError">{{registerError}}</v-alert>
                 <v-btn color="primary" @click="register">

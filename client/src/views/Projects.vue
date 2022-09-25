@@ -22,6 +22,9 @@ import router from '../router';
         'isLoggedIn'
       ])
     },
+    created(){
+        document.title = "Projects"
+    }
   }
 </script>
 
