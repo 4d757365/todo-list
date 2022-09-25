@@ -3,16 +3,16 @@
 Full stack Todo List app using AdonisJs and Vue.js.
 
 ## Register
-> ![] (https://gifyu.com/image/S3gnb)
+> ![] (https://s4.gifyu.com/images/register3acbb870504958ca.gif)
 
 ## Login
-> ![] (https://gifyu.com/image/S3gnz)
+> ![] (https://s5.gifyu.com/images/logina4bb300df7dea7d2.gif)
 
 ## Project
-> ![] (https://gifyu.com/image/S3gnp)
+> ![] (https://s5.gifyu.com/images/CreateProject.gif)
 
 ## Task 
-> ![] (https://gifyu.com/image/S3gn3)
+> ![] (https://s4.gifyu.com/images/CreateTask.gif)
 
 ## Edit project and task
-> ![] (https://gifyu.com/image/S3gnx)
+> ![] (https://s4.gifyu.com/images/EditTaskProject.gif)
